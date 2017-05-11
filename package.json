@@ -18,6 +18,8 @@
     "mocha": "^3.3.0"
   },
   "scripts": {
-    "electron": "electron ."
+    "electron": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
   }
 }

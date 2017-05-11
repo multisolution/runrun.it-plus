@@ -5,5 +5,9 @@
   "main": "src/main.js",
   "repository": "git@github.com:multisolution/runrun.it-plus.git",
   "author": "multisolution",
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@multisolution/multipart-parser": "^1.0.3",
+    "ftp": "^0.3.10"
+  }
 }

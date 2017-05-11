@@ -21,5 +21,12 @@
     "electron": "electron .",
     "pack": "build --dir",
     "dist": "build"
+  },
+  "build": {
+    "appId": "br.art.multisolution.runrunitplus",
+    "productName": "Runrun.it++",
+    "mac": {
+      "category": "public.app-category.productivity"
+    }
   }
 }

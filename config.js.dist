@@ -1,0 +1,12 @@
+module.exports = {
+  sentryUrl: '',
+  redis: {
+    host: '',
+    port: ''
+  },
+  ftp: {
+    host: '',
+    user: '',
+    password: ''
+  }
+}

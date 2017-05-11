@@ -18,7 +18,7 @@ webview.addEventListener('new-window', event => {
   const downloadRegexp = /https:\/\/secure\.runrun\.it\/documents\/(\d+)\/download/
   const matches = url.match(downloadRegexp)
 
-  if (matches.length > 0) {
+  if (matches && matches.length > 1) {
     const docId = matches[1]
 
     redis.get(docId, (err, data) => {

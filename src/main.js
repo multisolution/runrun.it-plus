@@ -1,5 +1,8 @@
 require('dotenv').config()
 
+const Raven = require('raven')
+Raven.config(process.env.SENTRY_URL).install();
+
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')

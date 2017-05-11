@@ -24,6 +24,11 @@ webview.addEventListener('new-window', event => {
     redis.get(docId, (err, data) => {
       if (err) throw err
 
+      if (data === null) {
+        shell.openExternal(url)
+        return
+      }
+
       const docJson = data.toString()
       const docMeta = JSON.parse(docJson)
       const { ext } = docMeta

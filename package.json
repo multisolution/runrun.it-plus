@@ -1,0 +1,9 @@
+{
+  "name": "runrun.it-plus",
+  "version": "1.0.0",
+  "description": "A desktop client for Runrun.it with additional features",
+  "main": "src/main.js",
+  "repository": "git@github.com:multisolution/runrun.it-plus.git",
+  "author": "multisolution",
+  "license": "BSD-3-Clause"
+}

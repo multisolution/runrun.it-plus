@@ -4,9 +4,14 @@ node_js:
 os:
   - linux
   - osx
+osx_image: xcode8
+
 env:
   - TARGET_ARCH=x64
-osx_image: xcode8
+
+branches:
+  only:
+    - master
 
 install:
   - npm install
@@ -14,7 +19,3 @@ install:
 script:
   - npm test
   - npm run dist
-
-branches:
-  only:
-    - master

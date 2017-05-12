@@ -9,6 +9,7 @@
   "ftp": {
     "host": null,
     "user": null,
-    "password": null
+    "password": null,
+    "dest": null
   }
 }

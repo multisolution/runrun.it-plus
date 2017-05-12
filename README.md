@@ -1,4 +1,4 @@
-# Runrun.it++ [![CircleCI](https://circleci.com/gh/multisolution/runrun.it-plus.svg?style=svg)](https://circleci.com/gh/multisolution/runrun.it-plus)
+# Runrun.it++ [![Build Status](https://travis-ci.org/multisolution/runrun.it-plus.svg?branch=master)](https://travis-ci.org/multisolution/runrun.it-plus)
 
 A desktop client for [Runrun.it](http://runrun.it/) with additional features:
 

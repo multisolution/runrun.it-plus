@@ -1,4 +1,4 @@
-# Runrun.it++ [![Build Status](https://travis-ci.org/multisolution/runrun.it-plus.svg?branch=master)](https://travis-ci.org/multisolution/runrun.it-plus)
+# Runrun.it++ [![Mac/Linux Status](https://travis-ci.org/multisolution/runrun.it-plus.svg?branch=master)](https://travis-ci.org/multisolution/runrun.it-plus) [![Windows Status](https://ci.appveyor.com/api/projects/status/leocavalcante/runrun-it-plus/branch/master?svg=true)](https://ci.appveyor.com/project/leocavalcante/runrun-it-plus)
 
 A desktop client for [Runrun.it](http://runrun.it/) with additional features:
 

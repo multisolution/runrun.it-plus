@@ -1,3 +1,18 @@
 version: 1.0.{build}
-build:
-  verbosity: minimal
+
+branches:
+  only:
+    - master
+
+install:
+  - npm install
+
+platform:
+  - x86
+  - x64
+
+test_script:
+  - npm test
+
+build_script:
+  - npm run dist

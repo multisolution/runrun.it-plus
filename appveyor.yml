@@ -4,8 +4,11 @@ branches:
   only:
     - master
 
+environment:
+  nodejs_version: "7"
+
 install:
-  - npm install --dev
+  - npm install
 
 platform:
   - x86

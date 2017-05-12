@@ -15,9 +15,14 @@ Raven.context(function () {
       protocol: 'file:',
       slashes: true
     }))
+
+
+
+    window.webContents.openDevTools()
+    require('./menu')
   }
 
   app.on('ready', appReady)
 
-  require('./menu')
+  
 })

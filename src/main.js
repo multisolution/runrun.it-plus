@@ -16,13 +16,8 @@ Raven.context(function () {
       slashes: true
     }))
 
-
-
-    //window.webContents.openDevTools()
     require('./menu')
   }
 
   app.on('ready', appReady)
-
-  
 })

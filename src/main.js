@@ -18,7 +18,7 @@ Raven.context(function () {
 
 
 
-    window.webContents.openDevTools()
+    //window.webContents.openDevTools()
     require('./menu')
   }
 

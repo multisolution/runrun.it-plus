@@ -1,0 +1,14 @@
+{
+  "sentry": {
+    "dsn": null
+  },
+  "redis": {
+    "host": null,
+    "port": null
+  },
+  "ftp": {
+    "host": null,
+    "user": null,
+    "password": null
+  }
+}

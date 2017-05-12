@@ -1,4 +1,4 @@
-const config = require('../../config')
+const settings = require('../../settings')
 const electron = require('electron')
 const fs = require('fs')
 const FTP = require('ftp')
@@ -6,7 +6,7 @@ const { parse } = require('@multisolution/multipart-parser')
 const redisMod = require('redis')
 
 const { shell } = electron
-const redis = redisMod.createClient(config.redis)
+const redis = redisMod.createClient(settings.redis)
 const webview = document.getElementById('webview')
 const ftp = new FTP()
 
@@ -33,7 +33,7 @@ webview.addEventListener('new-window', event => {
       const docJson = data.toString()
       const docMeta = JSON.parse(docJson)
       const { ext } = docMeta
-      const downloadUrl = `http://${config.ftp.host}/${docId}.${ext}`
+      const downloadUrl = `http://${settings.ftp.host}/${docId}.${ext}`
 
       shell.openExternal(downloadUrl)
     })
@@ -68,13 +68,13 @@ webview.addEventListener('dom-ready', event => {
     const { file } = uploadData[1]
 
     ftp.on('ready', event => {
-      ftp.put(file, `/var/www/html/${docId}.${ext}`, err => {
+      ftp.put(file, `${settings.ftp.dest}${docId}.${ext}`, err => {
         if (err) throw err
         redis.set(docId, JSON.stringify({ ext }))
         ftp.end()
       })
     })
 
-    ftp.connect(config.ftp)
+    ftp.connect(settings.ftp)
   })
 })

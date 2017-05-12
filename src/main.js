@@ -1,7 +1,7 @@
-const config = require('../config')
+const settings = require('../settings')
 
 const Raven = require('raven')
-Raven.config(config.sentryUrl).install();
+Raven.config(settings.sentry.dsn).install();
 
 const { app, BrowserWindow } = require('electron')
 const path = require('path')

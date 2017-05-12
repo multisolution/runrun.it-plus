@@ -6,26 +6,30 @@ const { parse } = require('@multisolution/multipart-parser')
 const redisMod = require('redis')
 
 const { shell } = electron
-const redis = redisMod.createClient(settings.redis)
 const webview = document.getElementById('webview')
+const redis = redisMod.createClient(settings.redis)
 const ftp = new FTP()
 
-redis.on('error', err => {
-  throw err
-})
+redis.on('error', err => { throw err })
+ftp.on('error', err => { throw err })
 
 webview.addEventListener('new-window', event => {
   const { url } = event
   const downloadRegexp = /https:\/\/secure\.runrun\.it\/documents\/(\d+)\/download/
   const matches = url.match(downloadRegexp)
 
+  console.log('[WebView] New Window')
+
   if (matches && matches.length > 1) {
     const docId = matches[1]
+
+    console.log(`[Download] ${docId}`)
 
     redis.get(docId, (err, data) => {
       if (err) throw err
 
       if (data === null) {
+        console.log(`[Download] ${docId} Not Found`)
         shell.openExternal(url)
         return
       }
@@ -68,9 +72,17 @@ webview.addEventListener('dom-ready', event => {
     const { file } = uploadData[1]
 
     ftp.on('ready', event => {
+      console.log('[FTP] Ready')
+
       ftp.put(file, `${settings.ftp.dest}${docId}.${ext}`, err => {
         if (err) throw err
-        redis.set(docId, JSON.stringify({ ext }))
+        console.log('[FTP] Put')
+
+        redis.set(docId, JSON.stringify({ ext }), (err, json) => {
+          if (err) throw err
+          console.log(`[Redis] Set: ${json}`)
+        })
+
         ftp.end()
       })
     })

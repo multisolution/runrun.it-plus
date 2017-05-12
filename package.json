@@ -20,7 +20,8 @@
   "scripts": {
     "electron": "electron .",
     "pack": "build --dir",
-    "dist": "build"
+    "dist": "build",
+    "test": "mocha"
   },
   "build": {
     "appId": "br.art.multisolution.runrunitplus",

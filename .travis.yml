@@ -14,8 +14,8 @@ branches:
     - master
 
 install:
-  - npm install
+  - yarn install
 
 script:
-  - npm test
-  - npm run dist
+  - yarn test
+  - yanr build

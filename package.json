@@ -19,9 +19,8 @@
   },
   "scripts": {
     "electron": "electron .",
-    "pack": "build --dir",
-    "dist": "build -p never",
-    "test": "mocha"
+    "test": "mocha",
+    "build": "build -p never"
   },
   "build": {
     "appId": "br.art.multisolution.runrunitplus",

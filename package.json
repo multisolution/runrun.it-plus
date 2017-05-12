@@ -20,7 +20,7 @@
   "scripts": {
     "electron": "electron .",
     "pack": "build --dir",
-    "dist": "build",
+    "dist": "build -p never",
     "test": "mocha"
   },
   "build": {
